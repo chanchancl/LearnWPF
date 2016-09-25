@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF1"
+        mc:Ignorable="d"
+        Title="Learn WPF 1" Height="350" Width="525">
+    <Grid x:Name="grid1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush>
+              <LinearGradientBrush.GradientStops>
+                    <GradientStopCollection>
+                        <GradientStop Offset="0.118" Color="black" />
+                        <GradientStop Offset="0.656" Color="Indigo" />
+                        <GradientStop Offset="1.00" Color="Violet" />
+                    </GradientStopCollection>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox   Margin="10,10,13,10" Name="txtQuestion"
+                   TextWrapping="Wrap" FontFamily="Verdana" FontSize="24" 
+                   Grid.Row="0" Background="{x:Null}">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+            </TextBox.Foreground>
+            [Please question here.]
+        </TextBox>
+        <Button
+                Margin="10,0,0,20" Width="127" Height="23" Name="cmdAnswer"
+                Click="cmdAnswer_Click" Grid.Row="1" HorizontalAlignment="Left">
+            Ask the Question
+        </Button>
+        <TextBox VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                 Margin="10,10,13,10" Name="txtAnswer" TextWrapping="Wrap"
+                 IsReadOnly="True" FontFamily="Verdana" FontSize="24" Foreground="Green"
+                 Grid.Row="2" Background="{x:Null}">
+            [Answer will appear here.]
+        </TextBox>
+    </Grid>
+</Window>
