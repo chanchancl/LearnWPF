@@ -29,5 +29,8 @@ namespace WPF1
             Point pt = e.GetPosition(this);
             tbText.Text = string.Format("You are at ({0},{1}) in window coordinates.", pt.X, pt.Y);
         }
+        //任何时候都可以使用 Application.Shutdown() 方法来结束 App
+        //这会使，Application.Run 立刻返回。
+        //    
     }   
 }

@@ -2,7 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WPF1"
-             StartupUri="4.MouseEvent.xaml">
+             StartupUri="5.ImageWindow.xaml">
+             <!--ShutdownMode="OnExplicitShutdown" 这个可以改变Application的关闭方式-->
+    
     <Application.Resources>
          
     </Application.Resources>
