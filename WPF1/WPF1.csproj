@@ -80,12 +80,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="4.MouseEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="3.RoutedEvent.xaml.cs">
       <DependentUpon>3.RoutedEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="4.MouseEvent.xaml.cs">
+      <DependentUpon>4.MouseEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

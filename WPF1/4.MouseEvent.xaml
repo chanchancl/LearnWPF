@@ -1,0 +1,17 @@
+﻿<Window x:Class="WPF1.MouseEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF1"
+        mc:Ignorable="d"
+        Title="MouseEvent" Height="300" Width="300"
+        MouseMove="Grid_MouseMove">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbText" Grid.Row="1" Margin="5"></TextBlock>
+    </Grid>
+</Window>
