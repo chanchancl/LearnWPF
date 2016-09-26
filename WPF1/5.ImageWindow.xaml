@@ -1,15 +1,15 @@
-﻿<Window x:Class="WPF1._5"
+﻿<Window x:Class="WPF1.ImageWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF1"
         mc:Ignorable="d"
-        Title="_5" Height="300" Width="300">
+        Title="ImageWindow" Height="300" Width="300">
     <ScrollViewer>
         <Grid>
             <Image Source="Image/千赫党万岁.jpg"/>
-            <Rectangle Height="200" Width="200" Fill="#FFD3ECF7" Opacity="0.5" Stroke="Black" ></Rectangle>
+            <Rectangle Fill="#FFD3ECF7" Opacity="0.5" Stroke="Black" RadiusX="20" RadiusY="20" StrokeThickness="5" Margin="77,24,-0.2,46.4" />
         </Grid>
     </ScrollViewer>
     

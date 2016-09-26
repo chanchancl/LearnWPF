@@ -11,15 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Runtime.CompilerServices;
 
 namespace WPF1
 {
     /// <summary>
     /// _5.xaml 的交互逻辑
     /// </summary>
-    public partial class _5 : Window
+    public partial class ImageWindow : Window
     {
-        public _5()
+        public ImageWindow()
         {
             InitializeComponent();
         }
