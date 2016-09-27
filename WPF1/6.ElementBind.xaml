@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF1"
         mc:Ignorable="d"
-        Title="ElementBind" Height="300" Width="300">
-    <DockPanel LastChildFill="False" >
+        Title="ElementBind" Height="300" Width="270">
+    <DockPanel LastChildFill="False" Margin="4,0">
         <Grid DockPanel.Dock="Top">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -15,20 +15,22 @@
             </Grid.RowDefinitions>
             <Slider Name="sliderFontSize" Margin="3" Minimum="10"
                 Maximum="40" Value="15" TickFrequency="1"
-                TickPlacement="TopLeft">
-            </Slider>
+                TickPlacement="TopLeft" Background="{x:Null}"/>
             <TextBlock Grid.Row="1" Margin="10" Text="Simple Text" Name="lblSampleText"
                    FontSize="{Binding ElementName=sliderFontSize, Path=Value}">
             </TextBlock>
             <Rectangle Grid.Row="2" Height="{Binding ElementName=sliderFontSize, Path=Value}" 
                    Width="{Binding ElementName=sliderFontSize, Path=Value}"
-                   Fill="Black" >
+                   Fill="Black" HorizontalAlignment="Left" >
             </Rectangle>
         </Grid>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Margin="3" Click="cmd_SetSmall">Set to Small</Button>
-            <Button Margin="3" Click="cmd_SetNormal">Set to Normal</Button>
-            <Button Margin="3" Click="cmd_SetLarge">Set to Large</Button>
-        </StackPanel>
+        <Border  BorderThickness="1" Margin="2" DockPanel.Dock="Bottom" BorderBrush="#FF979393">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button Margin="3" Click="cmd_SetSmall">Set to Small</Button>
+                <Button Margin="3" Click="cmd_SetNormal">Set to Normal</Button>
+                <Button Margin="3" Click="cmd_SetLarge">Set to Large</Button>
+            </StackPanel>
+        </Border>
     </DockPanel>
 </Window>
