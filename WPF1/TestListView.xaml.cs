@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Runtime.CompilerServices;
+using System.ComponentModel;
 
 namespace WPF1
 {
@@ -20,7 +22,7 @@ namespace WPF1
     /// </summary>
     public partial class TestListView : Window
     {
-        class Student
+        class Student : INotifyPropertyChanged
         {
             public Student(int num,string n)
             {
@@ -28,9 +30,19 @@ namespace WPF1
                 name = n;
                 score = 0;
             }
-            public int number { get; set; }
-            public string name { get; set; }
-            public int score { get; set; }
+            public int number { set; get; }
+            public string name { set; get; }
+            public int score  { set; get; }
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+            {
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
+            }
         }
 
         ObservableCollection<Student> bindingData = 
@@ -46,16 +58,15 @@ namespace WPF1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             bindingData[0].number = 5;
+
+            var collection = GridView.GetColumnCollection(listview);
+
+
             Student stu = new Student(77, "233小明");
             map[77] = stu;
             bindingData.Add(stu);
-            bindingData.CollectionChanged += BindingData_CollectionChanged;
         }
 
-        private void BindingData_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            int a = 5;
-        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
