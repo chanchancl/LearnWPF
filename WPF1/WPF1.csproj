@@ -82,6 +82,9 @@
     <Compile Include="1.Learn WPF.xaml.cs">
       <DependentUpon>1.Learn WPF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestListView.xaml.cs">
+      <DependentUpon>TestListView.xaml</DependentUpon>
+    </Compile>
     <Page Include="3.RoutedEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="1.Learn WPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

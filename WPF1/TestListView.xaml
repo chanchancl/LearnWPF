@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPF1.TestListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF1"
+        mc:Ignorable="d"
+        Title="TestListView" Height="300" Width="300"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0">
+            <ListBoxItem>1.它是谁</ListBoxItem>
+            <ListBoxItem>2.灭蛙种子</ListBoxItem>
+            <ListBoxItem>3.2333333</ListBoxItem>
+        </ListBox>
+        <ListView x:Name="listview" Grid.Row="1" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="学号" DisplayMemberBinding="{Binding number, Mode=TwoWay}"></GridViewColumn>
+                    <GridViewColumn Header="名字" DisplayMemberBinding="{Binding name, Mode=TwoWay}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="2" Click="Button_Click"
+                Content="Change" Margin="10,5,193.6,38.4"></Button>
+    </Grid>
+</Window>
