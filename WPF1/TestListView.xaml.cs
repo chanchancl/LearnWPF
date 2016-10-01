@@ -22,7 +22,7 @@ namespace WPF1
     /// </summary>
     public partial class TestListView : Window
     {
-        class Student : INotifyPropertyChanged
+        class Student 
         {
             public Student(int num,string n)
             {
@@ -34,15 +34,6 @@ namespace WPF1
             public string name { set; get; }
             public int score  { set; get; }
 
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-            {
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-                }
-            }
         }
 
         ObservableCollection<Student> bindingData = 
@@ -58,6 +49,10 @@ namespace WPF1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             bindingData[0].number = 5;
+            listview.ItemsSource = null;
+            listview.ItemsSource = bindingData;
+            // 日，原来刷新列表这么简单，先设置null，然后再回复。
+            // 可以，这很午时。
 
             var collection = GridView.GetColumnCollection(listview);
 
